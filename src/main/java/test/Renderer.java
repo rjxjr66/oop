@@ -40,7 +40,10 @@ public class Renderer {
                     if (renderable instanceof Clickable) {
                         Clickable obj = (Clickable) renderable;
                         if (obj.checkClicked(coord)) {
-                            // To do: 클릭 이벤트 전달
+                            Shape shape = (Shape) obj;
+                            Vector2d rel = new Vector2d(shape.position);
+                            rel.subtract(coord);
+                            shape.onClick(rel);
                         }
                     }
                 }

@@ -8,6 +8,12 @@ public class Shape {
 
     ArrayList<OnClickListener> listeners = new ArrayList<OnClickListener>();
 
+    public void onClick(Vector2d point) {
+        for (OnClickListener onClickListener : listeners) {
+            onClickListener.OnClick(point);
+        }
+    }
+
     public Vector2d getPosition() {
         return position;
     }
