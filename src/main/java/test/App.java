@@ -37,5 +37,12 @@ public class App
         renderer.addRenderable(circle1);
 
         simulator.run();
+
+        ComponentBase c = new ComponentBase();
+        try {
+            c.getComponent("key");
+        } catch (Exception e) {
+            //
+        }
     }
 }
